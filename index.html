@@ -41,7 +41,7 @@
   .services h3 { font-size:16px; margin-bottom:10px; color:var(--main); }
   .services li { list-style:none; font-size:14px; padding:6px 0; }
   .services li::before { content:"・"; color:var(--accent); font-weight:700; }
-  #msg { text-align:center; font-size:13px; color:var(--sub); margin-top:14px; min-height:18px; }
+  #msg { text-align:center; font-size:13px; color:#B4532A; min-height:0; }
 </style>
 </head>
 <body>
@@ -57,10 +57,10 @@
       <button class="btn gold" id="shareBtn">用 LINE 傳這張名片</button>
       <a class="btn green" id="lineBtn">加 LINE 聊聊需求</a>
       <a class="btn ghost" href="contact.vcf" download>存入手機通訊錄</a>
+      <p id="msg"></p>
     </div>
   </div>
   <div class="services"><h3 id="svT"></h3><ul id="svL"></ul></div>
-  <p id="msg"></p>
 
 <script>
 const C = window.CARD;
@@ -88,7 +88,7 @@ let ready = false;
 async function share() {
   if (!ready) return msg("LINE 尚未連線，請從 LINE 開啟此頁");
   if (!liff.isLoggedIn()) return liff.login({ redirectUri: location.href.split("?")[0] + "?share=1" });
-  if (!liff.isApiAvailable("shareTargetPicker")) return msg("這個環境不支援轉傳，請更新 LINE 版本");
+  if (!liff.isApiAvailable("shareTargetPicker")) return msg("轉傳功能未開啟：請到 LINE Developers 的 LIFF 設定打開 Share target picker");
   try {
     const res = await liff.shareTargetPicker([buildFlex(C)], { isMultiple: true });
     if (res) {

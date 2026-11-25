@@ -1,7 +1,7 @@
 // ===== 只要改這個檔案就能換成別人的名片 =====
 window.CARD = {
   // LINE Developers 建立 LIFF 後拿到的 ID（例如 2008xxxxxx-AbCdEfGh）
-  liffId: "請填入LIFF_ID",
+  liffId: "2011608113-27ZvUTxs",
 
   // 部署後的網址（Netlify 網址，結尾不要加 /）
   siteUrl: "https://yahg-business-card.netlify.app",

@@ -26,8 +26,8 @@ window.buildFlex = function (C) {
   const row = (k, v) => ({
     type: "box", layout: "baseline", spacing: "md",
     contents: [
-      { type: "text", text: k, size: "xs", color: c.sub, flex: 2 },
-      { type: "text", text: v, size: "xs", color: c.text, flex: 6, wrap: true }
+      { type: "text", text: k, size: "xs", color: c.sub, flex: 3 },
+      { type: "text", text: v, size: "xs", color: c.text, flex: 9, wrap: true }
     ]
   });
 
@@ -38,7 +38,7 @@ window.buildFlex = function (C) {
 
   // 第 1 張：個人名片
   const card1 = {
-    type: "bubble", size: "kilo",
+    type: "bubble", size: "mega",
     header: header(C.companyEn + " ・ 餐飲數位顧問"),
     body: {
       type: "box", layout: "vertical", spacing: "md", paddingAll: "18px",
@@ -78,7 +78,7 @@ window.buildFlex = function (C) {
 
   // 第 2 張：服務
   const card2 = {
-    type: "bubble", size: "kilo",
+    type: "bubble", size: "mega",
     header: header("我們能幫你做什麼"),
     body: {
       type: "box", layout: "vertical", spacing: "sm", paddingAll: "18px",
@@ -98,7 +98,7 @@ window.buildFlex = function (C) {
 
   // 第 3 張：資源
   const card3 = {
-    type: "bubble", size: "kilo",
+    type: "bubble", size: "mega",
     header: header("資源分享"),
     body: {
       type: "box", layout: "vertical", spacing: "sm", paddingAll: "18px",
